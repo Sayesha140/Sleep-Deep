@@ -1,0 +1,1 @@
+public interface ISleepLogManager extends ISleepLogAnalyzer,ISleepLogService,ISleepLogDataRetrieval{}
