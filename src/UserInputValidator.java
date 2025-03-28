@@ -6,20 +6,20 @@ public class UserInputValidator {
 
 
         while (true) {
-            System.out.println("\nEnter age in:");
-            System.out.println("1. Years");
+            System.out.println(Color.CYAN+"\nEnter age in:"+Color.RESET);
+            System.out.println("\n1. Years");
             System.out.println("2. Months");
-            System.out.print("\nEnter your choice: ");
+            System.out.print(Color.CYAN+"\nEnter your choice: "+Color.RESET);
 
             try {
                 choice = Integer.parseInt(scanner.nextLine().trim());
                 if (choice == 1 || choice == 2) {
                     break;
                 } else {
-                    System.out.println("\nInvalid choice. Please enter 1 for years or 2 for months.");
+                    System.out.println(Color.RED+"\nInvalid choice. Please enter 1 for years or 2 for months."+Color.RESET);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nInvalid input. Please enter 1 or 2.");
+                System.out.println(Color.RED+"\nInvalid input. Please enter 1 or 2."+Color.RESET);
             }
         }
 
@@ -27,24 +27,24 @@ public class UserInputValidator {
         while (true) {
             try {
                 if (choice == 1) {
-                    System.out.print("\nEnter age in years: ");
+                    System.out.print(Color.SOFT_LAVENDER+"\nEnter age in years: "+Color.RESET);
                     double age = Double.parseDouble(scanner.nextLine().trim());
                     if (age > 0 && age < 100) {
                         return age;
                     } else {
-                        System.out.println("\nPlease enter a valid age (>0-100). Try again.");
+                        System.out.println(Color.RED+"\nPlease enter a valid age (>0-100). Try again."+Color.RESET);
                     }
                 } else {
-                    System.out.print("\nEnter age in months: ");
+                    System.out.print(Color.SOFT_LAVENDER+"\nEnter age in months: "+Color.RESET);
                     int months = Integer.parseInt(scanner.nextLine().trim());
                     if (months > 0 ) {
                         return months / 12.0;
                     } else {
-                        System.out.println("\nPlease enter a valid number of months. Try again.");
+                        System.out.println(Color.RED+"\nPlease enter a valid number of months. Try again."+Color.RESET);
                     }
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\nInvalid input. Please enter a valid number.");
+                System.out.println(Color.RED+"\nInvalid input. Please enter a valid number."+Color.RESET);
             }
         }
     }
@@ -56,7 +56,7 @@ public class UserInputValidator {
             try {
                 return Gender.valueOf(genderInput);
             } catch (IllegalArgumentException e) {
-                System.out.println("Invalid input. Please enter either MALE or FEMALE.");
+                System.out.println(Color.RED+"\nInvalid input. Please enter either MALE or FEMALE."+Color.RESET);
             }
         }
     }
@@ -68,7 +68,7 @@ public class UserInputValidator {
             try {
                 return ActivityLevel.valueOf(activityInput);
             } catch (IllegalArgumentException e) {
-                System.out.println("Invalid input. Please enter one of the following: Low,Medium,High.");
+                System.out.println(Color.RED+"\nInvalid input. Please enter one of the following: Low,Medium,High."+Color.RESET);
             }
         }
     }
