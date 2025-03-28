@@ -66,3 +66,4 @@ public class LogReportGenerator implements IReportGenerator {
     }
 
 }
+

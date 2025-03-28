@@ -67,6 +67,16 @@ public class GoalManager implements IGoalManager{
         return goalDataList;
     }
 
+    @Override
+    public Goal getGoalForDate(LocalDate date){
+        for (Goal goal:goals){
+            if (goal.getDate().equals(date)){
+                return goal;
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public boolean goalExists(LocalDate date) {

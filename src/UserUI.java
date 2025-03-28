@@ -157,7 +157,7 @@ public class UserUI {
                         break;
                     case 3:
                         UtilMethods.clearTerminal();
-                        return;
+                       return;
                     default:
                         System.out.println(Color.RED+"\nInvalid option. Please Try again."+Color.RESET);
                         System.out.println();

@@ -1,6 +1,6 @@
 public interface UserFileManager {
 
-    void saveUserData(User user);
-    User loadUserData();
-    boolean userExists();
+     void saveUserData(User user);
+     User loadUserData();
+     boolean userExists();
 }

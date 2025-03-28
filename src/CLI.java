@@ -98,11 +98,11 @@ public class CLI {
                         break;
                     case 5:
                         System.out.println();
-                        for(int i=0;i<5;i++){
+                        for(int i=0;i<4;i++){
                             System.out.println();
                         }
                         System.out.println(Color.PURPLE+"\nExiting....Thank you for using sleep deep!"+Color.RESET);
-                        for(int i=0;i<10;i++){
+                        for(int i=0;i<7;i++){
                             System.out.println();
                         }
                         running = false;

@@ -63,60 +63,60 @@ public class GoalUI {
         else {
             viewGoals();
             System.out.println();
-            while (true){
+                while (true){
 
-                try {
-                    System.out.println();
-                    System.out.print(Color.SOFT_LAVENDER+"\nEnter the ID of the goal you want to edit: "+Color.RESET);
-
-                    String input=scanner.nextLine().trim();
-                    int id=Integer.parseInt(input);
-
-                    if (!goalManager.goalIdExist(id)){
-                        System.out.println("\nInvalid goal ID! Please enter a valid ID.");
-                        continue;
-                    }
-
-                    Goal goalToEdit = null;
-                    for (Goal goal : goalManager.getGoals()) {
-                        if (goal.getId() == id) {
-                            goalToEdit = goal;
-                            break;
-                        }
-                    }
-
-                    System.out.println();
-                    LocalDate date = InputValidator.getValidDate(Color.SOFT_LAVENDER+"\nEnter new date (yyyy-MM-dd):"+Color.RESET,scanner);
-
-                    if (goalToEdit != null && !goalToEdit.getDate().equals(date) && goalManager.goalExists(date)){
-                        System.out.println(Color.RED+"\nGoal already exists for "+date+Color.RESET);
-                        for(int i=0;i<10;i++){
+                        try {
                             System.out.println();
+                            System.out.print(Color.SOFT_LAVENDER+"\nEnter the ID of the goal you want to edit: "+Color.RESET);
+
+                            String input=scanner.nextLine().trim();
+                            int id=Integer.parseInt(input);
+
+                            if (!goalManager.goalIdExist(id)){
+                                System.out.println("\nInvalid goal ID! Please enter a valid ID.");
+                                continue;
+                            }
+
+                            Goal goalToEdit = null;
+                            for (Goal goal : goalManager.getGoals()) {
+                                if (goal.getId() == id) {
+                                    goalToEdit = goal;
+                                    break;
+                                }
+                            }
+
+                            System.out.println();
+                            LocalDate date = InputValidator.getValidDate(Color.SOFT_LAVENDER+"\nEnter new date (yyyy-MM-dd):"+Color.RESET,scanner);
+
+                            if (goalToEdit != null && !goalToEdit.getDate().equals(date) && goalManager.goalExists(date)){
+                                System.out.println(Color.RED+"\nGoal already exists for "+date+Color.RESET);
+                                for(int i=0;i<10;i++){
+                                    System.out.println();
+                                }
+                                UtilMethods.waitForEnter(scanner);
+                                return;
+                            }
+
+                            System.out.println();
+                            double targetHours = InputValidator.getValidSleepDuration(Color.SOFT_LAVENDER+"\nEnter new target sleep time (in hr): "+Color.RESET,scanner);
+
+                            goalManager.editGoal(id,date,targetHours);
+
+                            for(int i=0;i<5;i++){
+                                System.out.println();
+                            }
+                            System.out.println(Color.GREEN+"Goal with ID " + id + " edited successfully!"+Color.RESET);
+
+                            for(int i=0;i<6;i++){
+                                System.out.println();
+                            }
+                            UtilMethods.waitForEnter(scanner);
+                            return;
+
+                        } catch (NumberFormatException e) {
+                            System.out.println(Color.RED+"\nInvalid Log ID! Please enter a valid ID."+Color.RESET);
                         }
-                        UtilMethods.waitForEnter(scanner);
-                        return;
-                    }
-
-                    System.out.println();
-                    double targetHours = InputValidator.getValidSleepDuration(Color.SOFT_LAVENDER+"\nEnter new target sleep time (in hr): "+Color.RESET,scanner);
-
-                    goalManager.editGoal(id,date,targetHours);
-
-                    for(int i=0;i<5;i++){
-                        System.out.println();
-                    }
-                    System.out.println(Color.GREEN+"Goal with ID " + id + " edited successfully!"+Color.RESET);
-
-                    for(int i=0;i<6;i++){
-                        System.out.println();
-                    }
-                    UtilMethods.waitForEnter(scanner);
-                    return;
-
-                } catch (NumberFormatException e) {
-                    System.out.println(Color.RED+"\nInvalid Log ID! Please enter a valid ID."+Color.RESET);
                 }
-            }
         }
     }
 

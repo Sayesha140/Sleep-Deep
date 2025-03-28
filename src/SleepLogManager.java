@@ -30,16 +30,16 @@ public class SleepLogManager implements ISleepLogManager {
 
     @Override
     public void editLogs(int id,LocalDate date, LocalTime startTime, LocalTime endTime, double sleepDuration) {
-        SleepLog editedLog=new SleepLog(id,date,startTime,endTime,sleepDuration);
-        sleepLogs.set(id-1,editedLog);
-        storage.saveLogs(sleepLogs);
+            SleepLog editedLog=new SleepLog(id,date,startTime,endTime,sleepDuration);
+            sleepLogs.set(id-1,editedLog);
+            storage.saveLogs(sleepLogs);
     }
 
     @Override
     public void deleteLog(int id){
-        sleepLogs.remove(id-1);
-        reorganizeId();
-        storage.saveLogs(sleepLogs);
+             sleepLogs.remove(id-1);
+             reorganizeId();
+             storage.saveLogs(sleepLogs);
     }
 
     @Override

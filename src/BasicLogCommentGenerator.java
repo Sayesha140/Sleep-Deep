@@ -36,3 +36,4 @@ public class BasicLogCommentGenerator implements ISleepLogCommentGenerator {
                 : "You got a little extra sleep today. Make sure it doesn't affect your routine!";
     }
 }
+

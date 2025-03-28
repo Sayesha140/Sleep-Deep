@@ -5,6 +5,7 @@ import java.util.List;
 
 public class TipTxtFileReader implements ITipReader{
 
+    //private static final String tip_filePath="C:\\Users\\AYESHA\\IdeaProjects\\SleepDeep-Trial\\src\\QuickTips.txt";
     private static final String tip_filePath="QuickTips.txt";
 
     @Override

@@ -3,11 +3,12 @@ import java.util.List;
 
 public interface IGoalManager {
 
-    public void addGoal(LocalDate date,double targetHours);
-    public void editGoal(int id,LocalDate date,double targetHours);
-    public void deleteGoal(int id);
-    public List<String[]> viewGoals();
+    void addGoal(LocalDate date, double targetHours);
+    void editGoal(int id, LocalDate date, double targetHours);
+    void deleteGoal(int id);
+    List<String[]> viewGoals();
+    Goal getGoalForDate(LocalDate date);
     boolean goalExists(LocalDate date) ;
     boolean goalIdExist(int id);
-    public List<Goal> getGoals();
+    List<Goal> getGoals();
 }

@@ -39,6 +39,7 @@ public class ProgressTracker implements IReportGenerator{
         return reportData;
     }
 
+
     private String getVerdict(double totalSleptHours,double targetHours){
 
         String verdict;

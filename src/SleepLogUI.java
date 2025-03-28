@@ -69,33 +69,33 @@ public class SleepLogUI {
                 try {
 
 
-                    System.out.print(Color.SOFT_LAVENDER+"\nEnter the ID of the log you want to edit: "+Color.RESET);
+                       System.out.print(Color.SOFT_LAVENDER+"\nEnter the ID of the log you want to edit: "+Color.RESET);
 
-                    String input=scanner.nextLine().trim();
-                    int id=Integer.parseInt(input);
+                       String input=scanner.nextLine().trim();
+                       int id=Integer.parseInt(input);
 
-                    if (!logManager.logIdExists(id)){
-                        System.out.println(Color.RED+"\nInvalid Log ID! Please enter a valid ID."+Color.RESET);
-                        continue;
-                    }
+                       if (!logManager.logIdExists(id)){
+                           System.out.println(Color.RED+"\nInvalid Log ID! Please enter a valid ID."+Color.RESET);
+                           continue;
+                       }
 
-                    LocalDate date = InputValidator.getValidDate(Color.SOFT_LAVENDER+"\nEnter date (yyyy-MM-dd):"+Color.RESET,scanner);
-                    LocalTime startTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you went to bed (e.g., 10:30 PM): "+Color.RESET,scanner);
-                    LocalTime endTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you got up from bed (e.g., 6:30 AM): "+Color.RESET,scanner);
-                    double actualDuration = InputValidator.getValidSleepDuration(Color.SOFT_LAVENDER+"\nEnter the duration you actually slept (in hour): "+Color.RESET,scanner);
+                        LocalDate date = InputValidator.getValidDate(Color.SOFT_LAVENDER+"\nEnter date (yyyy-MM-dd):"+Color.RESET,scanner);
+                        LocalTime startTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you went to bed (e.g., 10:30 PM): "+Color.RESET,scanner);
+                        LocalTime endTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you got up from bed (e.g., 6:30 AM): "+Color.RESET,scanner);
+                        double actualDuration = InputValidator.getValidSleepDuration(Color.SOFT_LAVENDER+"\nEnter the duration you actually slept (in hour): "+Color.RESET,scanner);
 
-                    logManager.editLogs(id, date, startTime, endTime, actualDuration);
+                        logManager.editLogs(id, date, startTime, endTime, actualDuration);
 
                     for(int i=0;i<5;i++){
                         System.out.println();
                     }
                     System.out.println(Color.GREEN+"\nLog with ID " + id + " edited successfully!"+Color.RESET);
 
-                    for(int i=0;i<6;i++){
-                        System.out.println();
-                    }
-                    UtilMethods.waitForEnter(scanner);
-                    return;
+                       for(int i=0;i<6;i++){
+                          System.out.println();
+                       }
+                        UtilMethods.waitForEnter(scanner);
+                        return;
 
                 } catch (NumberFormatException e) {
                     System.out.println(Color.RED+"\nInvalid Log ID! Please enter a valid ID."+Color.RESET);
@@ -197,70 +197,70 @@ public class SleepLogUI {
 
     public void manageSleepLogs () {
 
-        while (true) {
+           while (true) {
 
-            UtilMethods.clearTerminal();
+               UtilMethods.clearTerminal();
 
-            SleepLogMenu();
+               SleepLogMenu();
 
-            if (scanner.hasNextInt()) {
-                int choice = scanner.nextInt();
+               if (scanner.hasNextInt()) {
+                   int choice = scanner.nextInt();
 
-                scanner.nextLine();
+                   scanner.nextLine();
 
-                switch (choice) {
-                    case 1:
-                        UtilMethods.clearTerminal();
-                        addLog();
-                        break;
-                    case 2:
-                        UtilMethods.clearTerminal();
-                        editLog();
-                        break;
-                    case 3:
-                        UtilMethods.clearTerminal();
-                        deleteLog();
-                        break;
-                    case 4:
-                        UtilMethods.clearTerminal();
-                        viewLogs();
-                        for(int i=0;i<10;i++){
-                            System.out.println();
-                        }
-                        UtilMethods.waitForEnter(scanner);
-                        break;
-                    case 5:
-                        UtilMethods.clearTerminal();
-                        return;
-                    default:
-                        System.out.println(Color.RED+"Invalid option. Please Try again."+Color.RESET);
-                        System.out.println();
+                   switch (choice) {
+                       case 1:
+                           UtilMethods.clearTerminal();
+                           addLog();
+                           break;
+                       case 2:
+                           UtilMethods.clearTerminal();
+                           editLog();
+                           break;
+                       case 3:
+                           UtilMethods.clearTerminal();
+                           deleteLog();
+                           break;
+                       case 4:
+                           UtilMethods.clearTerminal();
+                           viewLogs();
+                           for(int i=0;i<10;i++){
+                               System.out.println();
+                           }
+                           UtilMethods.waitForEnter(scanner);
+                           break;
+                       case 5:
+                           UtilMethods.clearTerminal();
+                           return;
+                       default:
+                           System.out.println(Color.RED+"Invalid option. Please Try again."+Color.RESET);
+                           System.out.println();
 
-                }
-            } else {
-                System.out.println(Color.RED+"Invalid option. Please enter a valid number."+Color.RESET);
-                System.out.println();
-                scanner.nextLine();
-            }
+                   }
+               } else {
+                   System.out.println(Color.RED+"Invalid option. Please enter a valid number."+Color.RESET);
+                   System.out.println();
+                   scanner.nextLine();
+               }
+
+           }
+       }
+
+        public void SleepLogMenu () {
+            System.out.println();
+
+            System.out.println("\n                                                                   ╔════════════════════════════════════╗");
+            System.out.println("                                                                   ║             Manage Logs            ║");
+            System.out.println("                                                                   ╠════════════════════════════════════╣");
+            System.out.println("                                                                   ║ 1. Add a Log                       ║");
+            System.out.println("                                                                   ║ 2. Edit Log                        ║");
+            System.out.println("                                                                   ║ 3. Delete Log                      ║");
+            System.out.println("                                                                   ║ 4. View All Logs                   ║");
+            System.out.println("                                                                   ║ 5. Go Back                         ║");
+            System.out.println("                                                                   ╚════════════════════════════════════╝");
+            System.out.print(Color.CYAN+"\nEnter your choice: "+Color.RESET);
 
         }
-    }
-
-    public void SleepLogMenu () {
-        System.out.println();
-
-        System.out.println("\n                                                                   ╔════════════════════════════════════╗");
-        System.out.println("                                                                   ║             Manage Logs            ║");
-        System.out.println("                                                                   ╠════════════════════════════════════╣");
-        System.out.println("                                                                   ║ 1. Add a Log                       ║");
-        System.out.println("                                                                   ║ 2. Edit Log                        ║");
-        System.out.println("                                                                   ║ 3. Delete Log                      ║");
-        System.out.println("                                                                   ║ 4. View All Logs                   ║");
-        System.out.println("                                                                   ║ 5. Go Back                         ║");
-        System.out.println("                                                                   ╚════════════════════════════════════╝");
-        System.out.print(Color.CYAN+"\nEnter your choice: "+Color.RESET);
-
-    }
 
 
 }

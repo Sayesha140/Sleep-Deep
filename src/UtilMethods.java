@@ -5,7 +5,7 @@ public class UtilMethods {
 
     public static void waitForEnter(Scanner scanner){
         System.out.println();
-        System.out.print("Press Enter to continue...");
+        System.out.print(Color.BLUE+"Press Enter to continue..."+Color.RESET);
         scanner.nextLine();
     }
 
@@ -18,7 +18,7 @@ public class UtilMethods {
                 System.out.flush();
             }
         } catch (IOException | InterruptedException e) {
-            System.out.println("Failed to clear terminal.");
+            System.out.println("\nFailed to clear terminal.");
         }
     }
 }
