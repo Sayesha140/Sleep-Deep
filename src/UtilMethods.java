@@ -5,7 +5,7 @@ public class UtilMethods {
 
     public static void waitForEnter(Scanner scanner){
         System.out.println();
-        System.out.println("Press Enter to continue...");
+        System.out.print("Press Enter to continue...");
         scanner.nextLine();
     }
 
