@@ -43,14 +43,15 @@ public class CLI {
 
             IGoalManager goalManager=new GoalManager(goalStorageManager);
             ISleepLogManager logManager=new SleepLogManager(logStorageManager);
+            ISleepLogAnalyzer analyzer=new LogAnalyzer(logManager);
 
-            IReportGenerator progressTracker=new ProgressTracker(goalManager,logManager);
-            IReportGenerator logReportGenerator=new LogReportGenerator(logManager, recommendationStrategy2,user2);
+            IReportGenerator progressTracker=new ProgressTracker(goalManager,analyzer);
+            IReportGenerator logReportGenerator=new LogReportGenerator(logManager, analyzer,recommendationStrategy2,user2);
 
             ITipReader tipReader=TipReaderFactory.getTipReader("QuickTips.txt");
             ITipGenerator tipGenerator=new QuickTipGenerator(tipReader);
 
-            ISleepLogCommentGenerator sleepLogCommentGenerator=new BasicLogCommentGenerator(logManager,recommendationStrategy2,user2);
+            ISleepLogCommentGenerator sleepLogCommentGenerator=new BasicLogCommentGenerator(analyzer,recommendationStrategy2,user2);
 
             ReportUI reportUI=new ReportUI(logReportGenerator,scanner);
 

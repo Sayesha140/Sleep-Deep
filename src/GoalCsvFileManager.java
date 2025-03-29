@@ -25,6 +25,12 @@ public class GoalCsvFileManager implements IGoalStorageManager{
     @Override
     public List<Goal> loadGoals() {
 
+        File file=new File("goals.csv");
+
+        if (!file.exists()){
+            return new ArrayList<>();
+        }
+
         List<Goal> goals = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(GOAL_FILE_PATH))) {
             String line;

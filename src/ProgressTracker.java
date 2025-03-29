@@ -7,11 +7,11 @@ import java.util.Map;
 public class ProgressTracker implements IReportGenerator{
 
     IGoalManager goalManager;
-    ISleepLogManager logManager;
+    ISleepLogAnalyzer analyzer;
 
-    public ProgressTracker(IGoalManager goalManager,ISleepLogManager logManager){
+    public ProgressTracker(IGoalManager goalManager,ISleepLogAnalyzer analyzer){
         this.goalManager=goalManager;
-        this.logManager=logManager;
+        this.analyzer=analyzer;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class ProgressTracker implements IReportGenerator{
         for (Goal goal : goals) {
             LocalDate date = goal.getDate();
             double targetHours = goal.getTargetHours();
-            double totalSleptHours = logManager.calculateTotalSleepDurationByDate(date);
+            double totalSleptHours = analyzer.calculateTotalSleepDurationByDate(date);
             String verdict = getVerdict(totalSleptHours, targetHours);
 
             Map<String, String> entry = new HashMap<>();

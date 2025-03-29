@@ -89,36 +89,6 @@ public class SleepLogManager implements ISleepLogManager {
         return logsForDate;
     }
 
-    @Override
-    public double calculateTotalSleepDurationByDate(LocalDate date){
-
-        double totalSleep=0;
-        List<SleepLog> logs=getLogsForDate(date);
-
-        for (SleepLog log:logs){
-            totalSleep+=log.getSleepDuration();
-        }
-        return totalSleep;
-    }
-
-    @Override
-    public double calculateTotalTimeInBedByDate(LocalDate date){
-
-        double totalTimeInBed = 0;
-        List<SleepLog> logs=getLogsForDate(date);
-
-        for (SleepLog log : logs) {
-            Duration duration = Duration.between(log.getStartTime(), log.getEndTime());
-
-            if (duration.isNegative()) {
-                duration = duration.plusHours(24);
-            }
-
-            totalTimeInBed += duration.toMinutes() / 60.0;
-        }
-
-        return totalTimeInBed;
-    }
 
     @Override
     public boolean logIdExists(int id) {

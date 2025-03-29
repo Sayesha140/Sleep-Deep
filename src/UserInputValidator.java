@@ -6,7 +6,7 @@ public class UserInputValidator {
 
 
         while (true) {
-            System.out.println(Color.CYAN+"\nEnter age in:"+Color.RESET);
+            System.out.println(Color.SOFT_LAVENDER+"\nEnter age in:"+Color.RESET);
             System.out.println("\n1. Years");
             System.out.println("2. Months");
             System.out.print(Color.CYAN+"\nEnter your choice: "+Color.RESET);

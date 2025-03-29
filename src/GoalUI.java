@@ -173,10 +173,12 @@ public class GoalUI {
 
         System.out.println();
         System.out.println("\n                                                                          ══════════════════════════════");
-        System.out.println("                                                                                  All Sleep Goals");
+        System.out.println("                                                                                 All Sleep Goals");
         System.out.println("                                                                          ══════════════════════════════");
 
-        System.out.println();
+        for(int i=0;i<5;i++){
+            System.out.println();
+        }
 
         if (goalsData.isEmpty()) {
             System.out.println(Color.RED+"\n                                                                            No goals available for now."+Color.RESET);
@@ -185,9 +187,11 @@ public class GoalUI {
 
 
         System.out.println("                                                                 +------+---------------+-------------------+");
-        System.out.printf("                                                                 | %-4s | %-12s  | %-16s  |\n", "ID", "Date", "Target Hours");
+        System.out.printf("                                                                 | %s%-4s%s | %s%-12s%s  | %s%-16s%s  |\n",
+                Color.SOFT_LAVENDER, "ID", Color.RESET,
+                Color.SOFT_LAVENDER, "Date", Color.RESET,
+                Color.SOFT_LAVENDER, "Target Hours", Color.RESET);
         System.out.println("                                                                 +------+---------------+-------------------+");
-
 
         for (String[] goal : goalsData) {
             System.out.printf("                                                                 | %-4s | %-12s  | %-16s  |\n", goal[0], goal[1], goal[2]);
@@ -218,8 +222,11 @@ public class GoalUI {
 
             String separator = "                                                              +------------+--------------+-------------+--------------+";
             System.out.println(separator);
-            System.out.printf("                                                              | %-10s | %-12s | %-11s | %-12s |\n",
-                    "Date", "Target Hours", "Hours Slept", "Status");
+            System.out.printf("                                                              | %s%-10s%s | %s%-12s%s | %s%-11s%s | %s%-12s%s |\n",
+                    Color.SOFT_LAVENDER, "Date", Color.RESET,
+                    Color.SOFT_LAVENDER, "Target Hours", Color.RESET,
+                    Color.SOFT_LAVENDER, "Hours Slept", Color.RESET,
+                    Color.SOFT_LAVENDER, "Status", Color.RESET);
             System.out.println(separator);
 
 

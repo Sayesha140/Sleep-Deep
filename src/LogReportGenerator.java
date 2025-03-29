@@ -3,11 +3,14 @@ import java.util.*;
 
 public class LogReportGenerator implements IReportGenerator {
     private ISleepLogManager logManager;
+
+    private ISleepLogAnalyzer analyzer;
     private SleepTimeRecommendationStrategy recommendationStrategy;
     private User user;
 
-    public LogReportGenerator(ISleepLogManager logManager, SleepTimeRecommendationStrategy recommendationStrategy,User user) {
+    public LogReportGenerator(ISleepLogManager logManager,ISleepLogAnalyzer analyzer, SleepTimeRecommendationStrategy recommendationStrategy,User user) {
         this.logManager = logManager;
+        this.analyzer=analyzer;
         this.recommendationStrategy = recommendationStrategy;
         this.user=user;
     }
@@ -22,9 +25,9 @@ public class LogReportGenerator implements IReportGenerator {
 
         for (LocalDate date : logsByDate.keySet()) {
 
-            double totalTimeInBed = logManager.calculateTotalTimeInBedByDate(date);
-            double totalSleepDuration = logManager.calculateTotalSleepDurationByDate(date);
-            double sleepDebt = calculateSleepDebt(recommendationStrategy,totalSleepDuration);
+            double totalTimeInBed = analyzer.calculateTotalTimeInBedByDate(date);
+            double totalSleepDuration = analyzer.calculateTotalSleepDurationByDate(date);
+            double sleepDebt = analyzer.calculateSleepDebt(recommendationStrategy,totalSleepDuration);
             String sleepQualityComment=getSleepQualityComment(totalSleepDuration,recommendationStrategy,user);
 
 
@@ -51,18 +54,6 @@ public class LogReportGenerator implements IReportGenerator {
         } else {
             return "Ideal sleep";
         }
-    }
-
-    private double calculateSleepDebt(SleepTimeRecommendationStrategy recommendationStrategy,double totalSleepDuration){
-        double sleepDebt;
-
-        if(totalSleepDuration<recommendationStrategy.getMinSleep()){
-            sleepDebt=recommendationStrategy.getMinSleep()-totalSleepDuration;
-        }
-        else {
-            sleepDebt=0.0;
-        }
-        return sleepDebt;
     }
 
 }

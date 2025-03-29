@@ -45,7 +45,7 @@ public class SleepLogUI {
         }
         System.out.println(Color.PURPLE+"Comment: "+Color.RESET+sleepLogCommentGenerator.generateLogComment(date));
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<7;i++){
             System.out.println();
         }
 
@@ -164,7 +164,9 @@ public class SleepLogUI {
             System.out.println("                                                                                   All Sleep Logs");
             System.out.println("                                                                          ══════════════════════════════");
 
-            System.out.println();
+            for(int i=0;i<5;i++){
+                System.out.println();
+            }
 
 
             if (logManager.getSleepLogs().isEmpty()) {
@@ -175,9 +177,12 @@ public class SleepLogUI {
 
 
             System.out.println("                                                     +-----+------------+------------+------------+----------------------+");
-            System.out.printf("                                                     | %-3s | %-10s | %-10s | %-10s | %-20s|\n",
-                    "ID", "Date", "Start Time", "End Time", "Actual Sleep Duration");
-
+            System.out.printf("                                                     | %s%-3s%s | %s%-10s%s | %s%-10s%s | %s%-10s%s | %s%-20s%s |\n",
+                    Color.SOFT_LAVENDER, "ID", Color.RESET,
+                    Color.SOFT_LAVENDER, "Date", Color.RESET,
+                    Color.SOFT_LAVENDER, "Start Time", Color.RESET,
+                    Color.SOFT_LAVENDER, "End Time", Color.RESET,
+                    Color.SOFT_LAVENDER, "Actual Sleep Duration", Color.RESET);
             System.out.println("                                                     +-----+------------+------------+------------+----------------------+");
             for (String[] log : logsData) {
                 System.out.printf("                                                     | %-3s | %-10s | %-10s | %-10s | %-20s |\n",
