@@ -45,7 +45,7 @@ public class ProgressTracker implements IReportGenerator{
         String verdict;
 
         if (totalSleptHours==0){
-            verdict="-------";
+            verdict="----";
         }
         else if (totalSleptHours>targetHours+2) {
             verdict="Overslept";
