@@ -24,13 +24,13 @@ public class BasicLogCommentGenerator implements ISleepLogCommentGenerator {
         double extraSleep = totalTimeSlept - maxSleep;
 
         return extraSleep > 0 ? getOverSleepingComment(extraSleep) :
-                totalTimeSlept >= minSleep ? "Great job! You slept just perfect today! Keep it up!." :
+                totalTimeSlept >= minSleep ? "Great job! You slept just perfect today! Keep it up!" :
                         totalTimeSlept >= minSleep - 1 ? "Almost there! Try to sleep a little longer." :
                                 "You need more rest. Consider adjusting your sleep schedule.";
     }
 
     private String getOverSleepingComment(double extraSleep) {
-        return extraSleep >= SEVERE_OVERSLEEP_THRESHOLD ? "Are you okay? Oversleeping regularly may indicate underlying health issues."
+        return extraSleep >= SEVERE_OVERSLEEP_THRESHOLD ? "Are you okay? Oversleeping sometimes may indicate underlying health issues."
                 : extraSleep >= MODERATE_OVERSLEEP_THRESHOLD ? "You might be oversleeping. Too much sleep can also cause fatigue!"
                 : extraSleep >= SLIGHT_OVERSLEEP_THRESHOLD ? "You slept longer than usual. If you're feeling tired despite this, check your sleep quality."
                 : "You got a little extra sleep today. Make sure it doesn't affect your routine!";

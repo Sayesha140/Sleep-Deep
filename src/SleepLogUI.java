@@ -29,8 +29,8 @@ public class SleepLogUI {
 
 
         LocalDate date = InputValidator.getValidDate(Color.SOFT_LAVENDER+"\nEnter date (yyyy-MM-dd):"+Color.RESET,scanner);
-        LocalTime startTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you went to bed (e.g., 10:30 PM): "+Color.RESET,scanner);
-        LocalTime endTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you got up from bed (e.g., 6:30 AM): "+Color.RESET,scanner);
+        LocalTime startTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you went to bed (e.g. 10:30 PM): "+Color.RESET,scanner);
+        LocalTime endTime = InputValidator.getValidTime(Color.SOFT_LAVENDER+"\nEnter the time you got up from bed (e.g. 6:30 AM): "+Color.RESET,scanner);
         double actualDuration= InputValidator.getValidSleepDuration(Color.SOFT_LAVENDER+"\nEnter the duration you actually slept (in hour): "+Color.RESET,scanner);
 
         logManager.addSleepLog(date,startTime,endTime,actualDuration);
