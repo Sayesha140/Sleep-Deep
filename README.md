@@ -1,4 +1,4 @@
-# 💤 Sleep Tracker App
+# 💤 SleepDeep
 
 **SleepDeep** is a console-based Java application to help users monitor, analyze, and improve their sleep habits using personalized recommendations and insightful reports. 
 
