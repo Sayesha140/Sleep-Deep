@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Features
+# 📌 Features
 
 ### Sleep Duration Recommendations
 - Personalized sleep duration suggestions based on age, gender, and activity level.
