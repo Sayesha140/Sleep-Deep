@@ -10,7 +10,7 @@
 - Personalized sleep duration suggestions based on age, gender, and activity level.
 
 ### Quick Sleep Tips
-- Get a **randomized quick tip** for better sleep hygiene each time you run the program.
+- Get **randomized quick tips** for better sleep hygiene and improving sleep quality.
   
 ### Sleep Logging
 - Add sleep logs with **date**, **start time in bed**, **end time in bed**, and **actual sleep duration**.
