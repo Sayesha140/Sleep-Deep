@@ -61,6 +61,8 @@ public class UserUI {
         scanner.nextLine();
         System.out.println();
 
+        UtilMethods.clearTerminal();
+
         double updatedAge=UserInputValidator.getValidAge(scanner);
         System.out.println();
         Gender updatedGender=UserInputValidator.getValidGender(scanner,Color.SOFT_LAVENDER+"\nEnter updated Gender (MALE/FEMALE): "+Color.RESET);

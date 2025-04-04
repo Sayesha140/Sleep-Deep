@@ -47,9 +47,7 @@ public class CLI {
 
             IReportGenerator progressTracker=new ProgressTracker(goalManager,analyzer);
             IReportGenerator logReportGenerator=new LogReportGenerator(logManager, analyzer,recommendationStrategy2,user2);
-
-            ITipReader tipReader=TipReaderFactory.getTipReader("QuickTips.txt");
-            ITipGenerator tipGenerator=new QuickTipGenerator(tipReader);
+            ITipGenerator tipGenerator=new QuickTipGenerator();
 
             ISleepLogCommentGenerator sleepLogCommentGenerator=new BasicLogCommentGenerator(analyzer,recommendationStrategy2,user2);
 
