@@ -58,7 +58,7 @@ public class CLI {
 
 
 
-            //UtilMethods.clearTerminal();
+
 
             System.out.println(Color.CYAN+"                                                                   ═════════════════════════════════════════");
             System.out.println("                                                                                  \u001B[1m SLEEP DEEP\u001B[0m");
@@ -100,7 +100,11 @@ public class CLI {
                         for(int i=0;i<4;i++){
                             System.out.println();
                         }
-                        System.out.println(Color.PURPLE+"\nExiting....Thank you for using sleep deep!"+Color.RESET);
+                        UtilMethods.clearTerminal();
+                        for(int i=0;i<7;i++){
+                            System.out.println();
+                        }
+                        System.out.println(Color.SOFT_LAVENDER+ "                                                          Thank you for using Sleep Deep! Sleep well, Live better!"+Color.RESET);
                         for(int i=0;i<7;i++){
                             System.out.println();
                         }
