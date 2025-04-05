@@ -23,6 +23,9 @@
 - Set your own **daily sleep goal**.
 - Manage your set goals (view/edit/delete).
 - Track whether you’re meeting your goal through logged entries.
+
+### Personalized Sleep Tips
+- Get personalized sleep tips for various sleep problems leading to better sleep.
   
 ### Reports & Insights
 - Get an **analyzed overview** of your sleep logs.

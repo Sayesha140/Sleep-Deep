@@ -52,9 +52,10 @@ public class CLI {
             ISleepLogCommentGenerator sleepLogCommentGenerator=new BasicLogCommentGenerator(analyzer,recommendationStrategy2,user2);
 
             ReportUI reportUI=new ReportUI(logReportGenerator,scanner);
-
             SleepLogUI sleepLogUI=new SleepLogUI(logManager,sleepLogCommentGenerator,scanner);
             GoalUI goalUI=new GoalUI(goalManager,progressTracker,scanner);
+            SleepTipsUI sleepTipsUI=new SleepTipsUI(scanner);
+
 
 
 
@@ -96,6 +97,10 @@ public class CLI {
                         reportUI.displayLogReport();
                         break;
                     case 5:
+                        UtilMethods.clearTerminal();
+                        sleepTipsUI.manageTips();
+                        break;
+                    case 6:
                         System.out.println();
                         for(int i=0;i<4;i++){
                             System.out.println();
@@ -137,7 +142,8 @@ public class CLI {
         System.out.println("                                                                   ║ 2. Manage Sleep Logs               ║");
         System.out.println("                                                                   ║ 3. Manage Goals                    ║");
         System.out.println("                                                                   ║ 4. Analyzed Overview Of Logs       ║");
-        System.out.println("                                                                   ║ 5. Exit                            ║");
+        System.out.println("                                                                   ║ 5. Get Personalized Sleep Tips     ║");
+        System.out.println("                                                                   ║ 6. Exit                            ║");
         System.out.println("                                                                   ╚════════════════════════════════════╝");
         System.out.print(Color.CYAN+"\nEnter Your Choice: "+Color.RESET);
 
