@@ -23,7 +23,7 @@ public class CLI {
             System.out.println();
 
 
-            if (!userUI.isProfileSet()){
+            if (!userFileManager.userExists()){
                 System.out.println(Color.CYAN+"                                                                   ═════════════════════════════════════════");
                 System.out.println("                                                                                  \u001B[1m SLEEP DEEP\u001B[0m");
                 System.out.println(Color.CYAN+"                                                                   ═════════════════════════════════════════"+Color.RESET);

@@ -129,10 +129,6 @@ public class UserUI {
     }
 
 
-    public boolean isProfileSet(){
-        return userFileManager.userExists();
-    }
-
 
     public void manageProfile(){
 
