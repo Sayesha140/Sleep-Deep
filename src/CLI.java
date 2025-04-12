@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class CLI {
@@ -23,7 +24,7 @@ public class CLI {
             System.out.println();
 
 
-            if (!userFileManager.userExists()){
+            if (!userExists()){
                 System.out.println(Color.CYAN+"                                                                   ═════════════════════════════════════════");
                 System.out.println("                                                                                  \u001B[1m SLEEP DEEP\u001B[0m");
                 System.out.println(Color.CYAN+"                                                                   ═════════════════════════════════════════"+Color.RESET);
@@ -147,6 +148,11 @@ public class CLI {
         System.out.println("                                                                   ╚════════════════════════════════════╝");
         System.out.print(Color.CYAN+"\nEnter Your Choice: "+Color.RESET);
 
+    }
+
+    private boolean userExists(){
+        File profileFile = new File("User_data.csv");
+        return profileFile.exists() && profileFile.length() > 0;
     }
 
 }

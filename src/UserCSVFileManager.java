@@ -43,9 +43,5 @@ public class UserCSVFileManager implements UserFileManager{
 
     }
 
-    @Override
-    public boolean userExists() {
-        File profileFile = new File(USER_FILE_PATH);
-        return profileFile.exists() && profileFile.length() > 0;
-    }
+
 }
