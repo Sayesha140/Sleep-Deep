@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class BasicLogCommentGenerator implements ISleepLogCommentGenerator {
+public class BasicLogCommentGenerator {
 
     private final ISleepLogAnalyzer analyzer;
     private final SleepTimeRecommendationStrategy recommendationStrategy;
@@ -16,7 +16,6 @@ public class BasicLogCommentGenerator implements ISleepLogCommentGenerator {
         this.user=user;
     }
 
-    @Override
     public String generateLogComment(LocalDate date) {
         double totalTimeSlept = analyzer.calculateTotalSleepDurationByDate(date);
         int minSleep = recommendationStrategy.getMinSleep();

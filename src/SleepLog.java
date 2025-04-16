@@ -43,14 +43,6 @@ public class SleepLog {
         this.id = id;
     }
 
-    public double calculateTotalTimeInBed(){
-        Duration durationInBed= Duration.between(startTime,endTime);
-
-        if (durationInBed.isNegative()){
-            durationInBed=durationInBed.plusHours(24);
-        }
-        return durationInBed.toMinutes()/60.0;
-    }
 
     @Override
     public String toString() {

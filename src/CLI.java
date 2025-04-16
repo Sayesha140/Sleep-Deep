@@ -50,7 +50,7 @@ public class CLI {
             IReportGenerator logReportGenerator=new LogReportGenerator(logManager, analyzer,recommendationStrategy2,user2);
             ITipGenerator tipGenerator=new QuickTipGenerator();
 
-            ISleepLogCommentGenerator sleepLogCommentGenerator=new BasicLogCommentGenerator(analyzer,recommendationStrategy2,user2);
+            BasicLogCommentGenerator sleepLogCommentGenerator=new BasicLogCommentGenerator(analyzer,recommendationStrategy2,user2);
 
             ReportUI reportUI=new ReportUI(logReportGenerator,scanner);
             SleepLogUI sleepLogUI=new SleepLogUI(logManager,sleepLogCommentGenerator,scanner);
@@ -132,7 +132,7 @@ public class CLI {
         }
     }
 
-    public void displayMenu(){
+    private void displayMenu(){
 
         System.out.println();
 

@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class SleepLogUI {
     private ISleepLogManager logManager;
-    private ISleepLogCommentGenerator sleepLogCommentGenerator;
+    private BasicLogCommentGenerator sleepLogCommentGenerator;
     Scanner scanner;
 
-    public SleepLogUI(ISleepLogManager logManager,ISleepLogCommentGenerator sleepLogCommentGenerator,Scanner scanner){
+    public SleepLogUI(ISleepLogManager logManager,BasicLogCommentGenerator sleepLogCommentGenerator,Scanner scanner){
         this.logManager=logManager;
         this.sleepLogCommentGenerator=sleepLogCommentGenerator;
         this.scanner=scanner;
